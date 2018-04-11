@@ -85,11 +85,14 @@ public class Java2_Assignment01 {
 		
 		// 5.  black horizontal line over red square
 		//  x = 70
-		//  y = 45 + 40 = 95... 
-		//  70, 45 x,y start point
+		//  y = 45 + 40 = 85...
+		//    85 + 40 = 125
+		//  70, 95 x,y start point
 		//  length is 80
+		//  70 + 80 = 150
+		//  70, 150 x, y end point
 		g.setColor(Color.BLACK); // color of left oval
-		//g.drawLine( 70, 45, 80);
+		g.drawLine( 70, 85, 150, 85);
 		
 		
 	}
