@@ -17,6 +17,7 @@ public class Java2_Assignment02Test {
 		//assertEquals(17, list.get(2));
 		//assertTrue(list.contains(-3));
 		//assertFalse(list.isEmpty());
+		
 	}
 //
 	@Test
@@ -35,7 +36,18 @@ public class Java2_Assignment02Test {
         list.add(30);
         list.add(-1);
         list.add(9);
+        // test size array should be 12
 		assertEquals(12,Java2_Assignment02.partition(list, breakPoint).size());
+		
+		LinkedList<Integer> fullList = Java2_Assignment02.partition(list, breakPoint);
+		LinkedList<Integer> beforeBP = Java2_Assignment02.partition(list, breakPoint);
+		LinkedList<Integer> afterBP  = Java2_Assignment02.partition(list, breakPoint);
+		
+		assertEquals(12, fullList.size());
+		//assertEquals(12, fullList.get(3));
+		assertTrue(beforeBP.contains(-3));
+		assertTrue(afterBP.contains(-3));
+		
 		//fail("Not yet implemented");
 	}
 //
