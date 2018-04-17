@@ -56,6 +56,7 @@ public class Java2_Assignment02 { // F-TAG
         // old way
         // int list[] = {15, 1, 6, 12, -3, 4, 8, 21, 2, 30, -1, 9 } ;
         // new way via LinkedList(s)
+        // BELOW is creating the hard-coded unordered array
         LinkedList<Integer> list = new LinkedList<Integer>();
         list.add(15);
         list.add(1);
@@ -70,15 +71,22 @@ public class Java2_Assignment02 { // F-TAG
         list.add(-1);
         list.add(9);
         
+        
+        // BELOW is displaying the hard-coded unordered array
         System.out.println("Using the following, hard coded, unordered array:  ");
         System.out.println(list);
         System.out.println("\n\n");
         
+        
+        
+        // BELOW is setting and displaying the boundaryPoint  breakPoint
         int breakPoint = 5;
         System.out.println("Using Boundary Point the hard coded value of : " 
                             + breakPoint + "\n\n");
 
 
+        // BELOW is : (1) creating orderedList; (2) calling function "partition", 
+        // (3) displaying the  new orderedList from partition invocation call-out
         LinkedList<Integer> orderedList = new LinkedList<Integer>();
         orderedList = partition(list, breakPoint);
         System.out.println("The new order is :   \n" + orderedList);
