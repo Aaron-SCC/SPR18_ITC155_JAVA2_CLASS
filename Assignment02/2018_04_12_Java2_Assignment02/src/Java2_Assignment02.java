@@ -39,25 +39,23 @@
 import java.util.*;
 
 public class Java2_Assignment02 { // F-TAG
+	// This is the MAIN that is hard-coded with an unordered array
+	// and a hard-coded boundaryPoint breakPoint
     public static void main(String[] args) { // E-TAG
-        System.out.println("This program will re-arrange at set of " + 
-                           "unordered integer numbers and return same " + 
-        		           "set but with the numbers less than BreakPoint in the " +
-                           "leftmost side of set and the numbers greater than  " +
-        		           "BreakPoint in the rightmost side of set." 
+        System.out.println("This program will re-arrange at set of \n" + 
+                           "unordered integer numbers and return same \n" + 
+        		           "set but with the numbers less than BreakPoint in the \n" +
+                           "leftmost side of set and the numbers greater than  \n" +
+        		           "BreakPoint in the rightmost side of set.\n" 
                           );
         
         System.out.println();
 
-        System.out.println("This program will re-arrange at set of " + 
-                           "unordered integer numbers and return same " + 
-		                   "set but with the numbers less than BreakPoint in the " +
-                           "leftmost side of set and the numbers greater than  " +
-		                   "BreakPoint in the rightmost side of set." 
-                          );
+
         
-        
-        //int list[] = {15, 1, 6, 12, -3, 4, 8, 21, 2, 30, -1, 9 } ;
+        // old way
+        // int list[] = {15, 1, 6, 12, -3, 4, 8, 21, 2, 30, -1, 9 } ;
+        // new way via LinkedList(s)
         LinkedList<Integer> list = new LinkedList<Integer>();
         list.add(15);
         list.add(1);
@@ -71,19 +69,24 @@ public class Java2_Assignment02 { // F-TAG
         list.add(30);
         list.add(-1);
         list.add(9);
-        //System.out.println(list);)
-        System.out.println(list.get(0));
-
-
-
-        //sieve(list, breakPoint);
-        partition(list, breakPoint);
         
+        System.out.println("Using the following, hard coded, unordered array:  ");
+        System.out.println(list);
+        System.out.println("\n\n");
+        
+        int breakPoint = 5;
+        System.out.println("Using Boundary Point the hard coded value of : " 
+                            + breakPoint + "\n\n");
+
+
+        LinkedList<Integer> orderedList = new LinkedList<Integer>();
+        orderedList = partition(list, breakPoint);
+        System.out.println("The new order is :   \n" + orderedList);
         
     } // E-TAG
 
-  // Returns a list of all prime numbers up to the given maximum
-  // using the Sieve of Eratosthenes algorithm.
+// Returns a re-ordered listed based upon breakPoint or boundaryPoint 
+// passed into via invocation, by other programming or user input
      public static LinkedList<Integer> partition(LinkedList<Integer> list, int breakPoint) { // D-TAG
     	 
     	 // declare beforeBP (BreakPoint) and afterBP 
@@ -93,13 +96,14 @@ public class Java2_Assignment02 { // F-TAG
     	 LinkedList<Integer> fullList = new LinkedList<Integer>();
     	    	 
     	 for (int i = 0; i < list.size(); i++) { // C-TAG
-    		 System.out.println(list.get(i));
+    		 
     		 if (list.get(i) < breakPoint){
     			 beforeBP.add(list.get(i));
     		 } else {     // > breakPoint
     			 afterBP.add(list.get(i));
     		 }
     	 } // C-TAG
+    	 
     	 
     	 for (int i = 0; i <  beforeBP.size()  ; i++) { // CC-TAG
     		 fullList.add(beforeBP.get(i));
@@ -114,7 +118,6 @@ public class Java2_Assignment02 { // F-TAG
      
 	
 } // F-TAG
-
 
 
 
