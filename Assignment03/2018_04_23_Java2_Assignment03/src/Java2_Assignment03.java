@@ -39,6 +39,7 @@ public class Java2_Assignment03 { // A-FLAG
 		// TODO Auto-generated method stub
 
 		// map views (key set and values)
+		// first book SET
 		Map<String, String> nameMap = new TreeMap<String, String>();
 		nameMap.put("Marty",     "Stepp"  ) ;
 		nameMap.put("Stuart",    "Reges"  ) ;
@@ -52,6 +53,7 @@ public class Java2_Assignment03 { // A-FLAG
 
 		
 		// map views (key set and values)
+		// second book SET
 		Map<String, String> nameMap2 = new TreeMap<String, String>();
 		nameMap2.put("Kendrick", "Perkins") ;
 		nameMap2.put("Stuart",   "Reges"  ) ;
@@ -65,6 +67,7 @@ public class Java2_Assignment03 { // A-FLAG
 		
 
 		// map views (key set and values)
+		// my key/value sets for my testing
 		Map<String, String> nameMap3 = new TreeMap<String, String>();
 		nameMap3.put("Kendrick", "Lamar") ;
 		nameMap3.put("Reggie",   "Bush"  ) ;
@@ -78,6 +81,7 @@ public class Java2_Assignment03 { // A-FLAG
 		
 		
 		// map views (key set and values)
+		// my key/value sets for my testing
 		Map<String, String> nameMap4 = new TreeMap<String, String>();
 		nameMap4.put("Kendrick", "Lamar") ;
 		nameMap4.put("Reggie",   "Miller"  ) ;
@@ -91,6 +95,7 @@ public class Java2_Assignment03 { // A-FLAG
 
 
 		// map views (key set and values)
+		// my key/value sets for my testing
 		Map<String, String> nameMap5 = new TreeMap<String, String>();
 		nameMap5.put("Kendrick", "Lamar") ;
 		nameMap5.put("Reggie",   "BushyTail"  ) ;
@@ -105,7 +110,8 @@ public class Java2_Assignment03 { // A-FLAG
 
 
 	} // B-FLAG
-	
+
+	// method for testing value uniqueness
 	public static boolean isUnique(Map<String, String> inPut) { // C-FLAG
 		boolean isThisUnique = true;
 
@@ -115,7 +121,7 @@ public class Java2_Assignment03 { // A-FLAG
 					// do nothing same KEY					
 				} else { // different KEY
 					if (inPut.get(name1) == inPut.get(name2) ){
-						isThisUnique = false;
+						isThisUnique = false; // same VALUE; uniqueness=FALSE
 					}
 				}
 			}
