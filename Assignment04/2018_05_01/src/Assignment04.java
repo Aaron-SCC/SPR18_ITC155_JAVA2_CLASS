@@ -75,50 +75,43 @@ public class Assignment04 {
 		// TODO Auto-generated method stub
 		
 		
+		for (int i = 1 ; i <= 10 ; i++) {
+			writeSequence(i);
+		    System.out.println();
+			
+		}
 		
-		System.out.println(writeSequence(5));
-		
+		writeSequence(10);
+		System.out.println();
+		writeSequence(3);
 	}
 	
 	
 	
 	// new recursion approach
-	public static String writeSequence(int n){ // D-FLAG
+	public static void writeSequence(int n){ // D-FLAG
 		
-		int firstTime = 0;
+	    if( n < 1 )
+	        throw new IllegalArgumentException();
 
-	
+	    if( n == 1 ) {
+	        System.out.print("1");
+
+	    } else if( n == 2 ) {
+	        System.out.print("1 1");
+
+	    } else if( n % 2 == 0 ){
+	        System.out.print((n / 2) + " ");
+	        writeSequence(n - 2);
+	        System.out.print(" " + (n / 2));
+
+	    } else if( n % 2 == 1 ) {
+	        System.out.print(((n + 1) / 2) + " ");
+	        writeSequence((n - 2));
+	        System.out.print(" " + ((n + 1) / 2));
+	    }      
 		
-		// base casees;
-		if (n<=0) { // E-FLAG
-			// Throw Exception if int N is < ONE
-			throw new IllegalArgumentException("Need to enter a number greater than or equal to ONE.");
-		} else if (n==1){
-			// no-op  for DEBUG PURPOSES
-			
-		} else if (n%2 == 1 ) { // E-FLAG  // odd
-
-			lowerHalf    = lowerHalf + " " +  Integer.toString( (n/2 + n%2) ) ;
-			upperHalf    =                    Integer.toString( (n/2 + n%2) ) + " " + upperHalf ;
-			entireString = lowerHalf + centerPiece + upperHalf ;
-			
-			writeSequence(n-1);
-			
-			
-
-		} else if (n/n == 1 && n%2==0 && firstTime = 0) {
-			centerPiece = " 1 1 ";
-			System.out.println("DEBUG " + centerPiece + n);
-			writeSequence(n-1);
-		} else {
-			System.out.println("DEBUG  "  + n );
-			writeSequence(n-1);
-
-			
-		}
-		// E-FLAG
-		
-		return entireString ;
+	    String outPut = "";
 			
 	} // D-FLAG
 	
