@@ -1,9 +1,9 @@
 // ITC 155 JAVA 2 CLASS
 // SPRING QUARTER 2018
-// 2018_04_23
+// 
 // Aaron Lewis
 // 
-// Assignment 03:
+// Assignment 04:
 // In Java, via Eclipse.
 // Place on github.com
 // Submit on CANVAS the URL of assignment on github.com 
@@ -58,32 +58,38 @@ import java.util.*;
 
 
 public class Assignment04 {
-	
-	
-	
-	public static String lowerHalf   = "";
-	public static String centerPiece = " 1 ";
-	public static String upperHalf   = "";
-	
-	public static String entireString = "";
 
-	
-	
-
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		
 		
-		for (int i = 1 ; i <= 10 ; i++) {
+		
+	
+		
+		// below to test against book instructions
+		for (int i = 1 ; i <= 10 ; i++ ){
 			writeSequence(i);
-		    System.out.println();
-			
+			System.out.println();			
 		}
 		
-		writeSequence(10);
-		System.out.println();
-		writeSequence(3);
+        // Creating a File object that represents the disk file.
+        PrintStream o = new PrintStream(new File("A.txt"));
+ 
+        // Store current System.out before assigning a new value
+        PrintStream console = System.out;
+ 
+        // Assign o to output stream
+        System.setOut(o);
+        System.out.println("This will be written to the text file");
+
+		// below to test against book instructions
+		for (int i = 1 ; i <= 10 ; i++ ){
+			writeSequence(i);
+			System.out.println();			
+		}
+
+		
+		
 	}
 	
 	
@@ -91,27 +97,26 @@ public class Assignment04 {
 	// new recursion approach
 	public static void writeSequence(int n){ // D-FLAG
 		
-	    if( n < 1 )
-	        throw new IllegalArgumentException();
-
-	    if( n == 1 ) {
-	        System.out.print("1");
-
-	    } else if( n == 2 ) {
-	        System.out.print("1 1");
-
-	    } else if( n % 2 == 0 ){
-	        System.out.print((n / 2) + " ");
-	        writeSequence(n - 2);
-	        System.out.print(" " + (n / 2));
-
-	    } else if( n % 2 == 1 ) {
-	        System.out.print(((n + 1) / 2) + " ");
-	        writeSequence((n - 2));
-	        System.out.print(" " + ((n + 1) / 2));
-	    }      
 		
-	    String outPut = "";
+	    if (n < 1) throw new IllegalArgumentException("Must enter in integer value greater than ONE");
+	    
+	    if (n == 1) {
+	    	System.out.print("1");    // for ODD cases
+	    } else if (n == 2) {
+	        System.out.print("1 1");  // for EVEN cases
+	    } else {
+	        int placeHolder = (n+1) / 2;
+	        
+	        System.out.print(placeHolder + " ");
+	        
+	        writeSequence(n - 2);     // ARGHH took this one FOREVER
+	            // for -2 part and the placement.... UGH
+	        
+	        System.out.print(" " + placeHolder);
+	      
+	    }
+	    
+
 			
 	} // D-FLAG
 	

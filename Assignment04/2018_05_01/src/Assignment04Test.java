@@ -1,78 +1,43 @@
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 import org.junit.Test;
 
 
 public class Assignment04Test {
 
 	@Test
-	public void testMain() {
-		fail("Not yet implemented");
+	public void testMain() throws FileNotFoundException {
+//		fail("Not yet implemented");
+        // Creating a File object that represents the disk file.
+        PrintStream o = new PrintStream(new File("results.txt"));
+ 
+        // Store current System.out before assigning a new value
+        PrintStream console = System.out;
+ 
+        // Assign o to output stream
+        System.setOut(o);
+
+
+		// below to test against book instructions
+		for (int i = 1 ; i <= 10 ; i++ ){
+			Assignment04.writeSequence(i);
+			System.out.println();			
+		}
+		
+		
+		// ARGHHH  got stumped on output file text string 
+		//  vs.  expected string testing...
+		
 	}
 
 	@Test
 	public void testWriteSequence() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEquals() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
-	}
 
 }
