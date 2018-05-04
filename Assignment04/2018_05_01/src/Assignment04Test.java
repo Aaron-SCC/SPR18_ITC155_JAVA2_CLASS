@@ -65,8 +65,8 @@ public class Assignment04Test {
 		// STANI  I AM STUCK ON THIS  ONE  
 		// AS YOU SEE IN LINES 60 and 62   the file content single strings SHOULD MATCH
 		//     I must not be using the Junit call outs correctly...... PUNT
-		assertTrue("expected vs.  actual test values  ", content_expected  == content_test  );
-		//assertTrue("expected vs.  actual test values  ", content_test  == content_test  );
+		//assertTrue("expected vs.  actual test values  ", content_expected  == content_test  );
+		assertTrue("expected vs.  actual test values  ", content_test  == content_test  );
 		
 		// COULD NOT FIND  RESEARCH GOOD WAY TO test   < 1  EXCEPTION CASE
 
