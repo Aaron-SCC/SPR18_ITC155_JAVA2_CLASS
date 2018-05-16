@@ -62,22 +62,22 @@ public class MidTerm_Problem01  {
 			System.out.println("mode IS ZERO    since EMTPY LIST !!!! ");
 			return modeCount;
 		} else { // ELSE WE HAVA LIST   TO  P R O C E S S  !!!!
+			Iterator<Integer> i = list.iterator();
+			//while (list.hasNext()){
+			while (i.hasNext()){
+				int element = i.next();
+				System.out.println(element);
+				if (!mapOccurrences.containsKey(element)) {
+					mapOccurrences.put(element, 1);
+				} else {
+					int count = mapOccurrences.get(element);
+					mapOccurrences.put(element, count + 1);
+				}
+			}
 			
+			modeCount = Collections.max(mapOccurrences.values());			
 		}
-//		Iterator<Integer> i = list.iterator();
-//		//while (list.hasNext()){
-//		while (i.hasNext()){
-//			int element = i.next();
-//			System.out.println(element);
-//			if (!mapOccurrences.containsKey(element)) {
-//				mapOccurrences.put(element, 1);
-//			} else {
-//				int count = mapOccurrences.get(element);
-//				mapOccurrences.put(element, count + 1);
-//			}
-//		}
-//		
-//		modeCount = Collections.max(mapOccurrences.values());
+
 		
 		System.out.println();
 		System.out.println();
