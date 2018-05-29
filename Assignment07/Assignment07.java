@@ -15,46 +15,30 @@
 // create a Junit test
 // 
 // 123456789 123456789 123456789 123456789 123456789 123456789
+//For Assignment 07
+//
 // Assignment:
-//     4th Ed of textbook Ch 12...Code a solution and a test 
-//     for p. 823 ex. 7 Write a recursive method called 
-//     writeChars...
+// 4th Ed of textbook Ch 13...Code a solution and a test for 
+// Ch 13 p. 881 ex. 18 Write a modified version of the selection
+// sort... 
 //
-// Chapter 12, page 823, 
-// Exercise 7.
-// 
-// Write a method called    writeChars   that accepts an 
-// integer parameter    n    and that prints out a total of 
-//     n    characters.  The middle character of the output 
-// should always be an asterisk ( "*" ).  If you are asked to 
-// write out an even number of characters, then there will be 
-// two asterisks in the middle ( "**" ).  Before the 
-// asterisk(s) you should write out less-than characters 
-// ( "<" ).  After the asterisk(s) you should write out 
-// greater-than characters ( ">" ).  Your method should throw 
-// an    IllegalArgumentException   if it is passed a value 
-// less than 1.  For example, the following calls produce the 
-// following output:
+// Chapter 13, page 881
+// Exercise 18
+// Write a modified version of the selection sort algorithm that 
+// selects the largest element each time and moves its to the 
+// end of the array, rather than selecting the smallest element 
+// and moving it to the beginning.  
+//
+// QUESTION:  Will this algorithm be faster than the standard 
+//   selection sort?
+// ANSWER:    NO; same a regular SelectionSort
 //
 //
-// Method call                Output produced
-// ----------------------------------------------
-// wrtieChars(1);          *
-// wrtieChars(2);          **
-// wrtieChars(3);          <*>
-// wrtieChars(4);          <**>
-// wrtieChars(5);          <<*>>
-// wrtieChars(6);          <<**>>
-// wrtieChars(7);          <<<*>>>
-// wrtieChars(8);          <<<**>>>
-// wrtieChars(9);          <<<<*>>>>
-// wrtieChars(10);         <<<<**>>>>
-// 
-// Notice that when    n   is odd the sequence has a single 
-//     *   in the middle, whereas for even values it has two 
-//     *s    in the middle.  Your method should throw an 
-//     IllegalArgumentException    if it is passed a value 
-// less than    1.
+// QUESTION:  What will its complexity class (big-Oh) be?
+// ANSWER:    O(N^2)  ; same a regular SelectionSort
+//
+//
+//
 // create a Junit test
 // create a Junit test
 // create a Junit test
