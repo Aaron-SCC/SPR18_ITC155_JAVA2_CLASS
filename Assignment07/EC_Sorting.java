@@ -63,14 +63,14 @@ public class EC_Sorting {
         System.out.println();
 
         
-        // THIS SECTION to TEST the assignment METHOD        
+        // THIS SECTION to TEST the assignment BubbleSort METHOD        
         int numsL[] = {12, 123,1,28,183,16};
         System.out.println(Arrays.toString(numsL));
         
         System.out.println(Arrays.toString(BubbleSort(numsL)));
         System.out.println();
         
-        // THIS SECTION to TEST the assignment METHOD        
+        // THIS SECTION to TEST the assignment ShellSort METHOD        
         int numsS[] = {12, 123,1,28,183,16};
         System.out.println(Arrays.toString(numsS));
         
@@ -100,40 +100,106 @@ public class EC_Sorting {
     
     // BELOW is the heart of the assignment 
 	// BubbleSort
-    public static int[] BubbleSort(int[] a){
-        for (int i = a.length -1; i > 0 ; i--){        // THIS ONE and ...
-            // find index of largest element
-            int largest = i;
-            //for(int j = a.length - 1; j > 0 ; j--){
-            for(int j = i - 1; j >= 0 ; j--){         // THIS ONE esp. were tough to nail down
-                if(a[j] > a[largest]){                // had to reverse engineer the book example
-                    largest = j;                      // ... wait for... in reverse 
-                }
-            }
-            
-            swap(a, i, largest); // swap largest to back end of index
-        }
-        return a;
-    }
+    // BubbleSort is a O(N^2) complexity
+    // instead of swapping one (smallest or largest) of entire 
+    // array sweep like SelectionSort, it does in situ, two at 
+    // a time
+    //     FOR A MORE DETAILED DESCRIPTION
+    // FROM https://brilliant.org/wiki/sorting-algorithms/
+    // Bubble sort is a comparison-based algorithm that 
+    // compares each pair of elements in an array and 
+    // swaps them if they are out of order until the entire 
+    // array is sorted. For each element in the list, the 
+    // algorithm compares every pair of elements.
+    //
+    public static int[] BubbleSort(int[] data){
+    	  int lenD = data.length;
+    	  int tmp = 0;
+    	  for(int i = 0; i < lenD ; i++){
+    	    for(int j = (lenD-1) ; j >= (i+1) ; j--){
+    	      if(data[j]<data[j-1]){
+    	        tmp       = data[j];
+    	        data[j]   = data[j-1];
+    	        data[j-1] = tmp;
+    	      }
+    	    }
+    	  }
+    	  return data;
+    	}
+    
+//    public static int[] BubbleSort(int[] a){
+//        for (int i = a.length -1; i > 0 ; i--){        // THIS ONE and ...
+//            // find index of largest element
+//            int largest = i;
+//            //for(int j = a.length - 1; j > 0 ; j--){
+//            for(int j = i - 1; j >= 0 ; j--){         // THIS ONE esp. were tough to nail down
+//                if(a[j] > a[largest]){                // had to reverse engineer the book example
+//                    largest = j;                      // ... wait for... in reverse 
+//                }
+//            }
+//            
+//            swap(a, i, largest); // swap largest to back end of index
+//        }
+//        return a;
+//    }
     
     
     // BELOW is the heart of the assignment 
 	// ShellSort
-    public static int[] ShellSort(int[] a){
-        for (int i = a.length -1; i > 0 ; i--){        // THIS ONE and ...
-            // find index of largest element
-            int largest = i;
-            //for(int j = a.length - 1; j > 0 ; j--){
-            for(int j = i - 1; j >= 0 ; j--){         // THIS ONE esp. were tough to nail down
-                if(a[j] > a[largest]){                // had to reverse engineer the book example
-                    largest = j;                      // ... wait for... in reverse 
-                }
-            }
-            
-            swap(a, i, largest); // swap largest to back end of index
-        }
-        return a;
-    }
+    // ShellSort is a O(N^2) complexity
+    //     FOR A MORE DETAILED DESCRIPTION
+    // FROM https://en.wikipedia.org/wiki/Shellsort
+    // Shellsort, also known as Shell sort or Shell's 
+    // method, is an in-place comparison sort. It can 
+    // be seen as either a generalization of sorting by 
+    // exchange (bubble sort) or sorting by insertion 
+    // (insertion sort).[3] The method starts by sorting 
+    // pairs of elements far apart from each other, then 
+    // progressively reducing the gap between elements 
+    // to be compared. Starting with far apart elements, 
+    // it can move some out-of-place elements into 
+    // position faster than a simple nearest neighbor 
+    // exchange. Donald Shell published the first 
+    // version of this sort in 1959.[4][5] The running 
+    // time of Shellsort is heavily dependent on the gap 
+    // sequence it uses. For many practical variants, 
+    // determining their time complexity remains an open 
+    // problem.
+    //
+    public static int[] ShellSort(int[] data){
+    	  int lenD = data.length;
+    	  int inc = lenD / 2;
+    	  while(inc > 0){
+    	    for(int i = inc ; i < lenD ; i++){
+    	      int tmp = data[i];
+    	      int j = i;
+    	      while( j >= inc && data[j-inc] > tmp){
+    	        data[j] = data[j-inc];
+    	        j = j - inc;
+    	      }
+    	      data[j] = tmp;
+    	    }
+    	    inc = (inc / 2);
+    	  }
+    	  return data;
+    	}
+    
+    
+//    public static int[] ShellSort(int[] a){
+//        for (int i = a.length -1; i > 0 ; i--){        // THIS ONE and ...
+//            // find index of largest element
+//            int largest = i;
+//            //for(int j = a.length - 1; j > 0 ; j--){
+//            for(int j = i - 1; j >= 0 ; j--){         // THIS ONE esp. were tough to nail down
+//                if(a[j] > a[largest]){                // had to reverse engineer the book example
+//                    largest = j;                      // ... wait for... in reverse 
+//                }
+//            }
+//            
+//            swap(a, i, largest); // swap largest to back end of index
+//        }
+//        return a;
+//    }
     
 
     
